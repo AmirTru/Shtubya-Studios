@@ -173,8 +173,8 @@ function paintRedWithAni(id) {
 function paintBlue(morningId, eveningId) {
 
     //check if not null (could be filterd) paint indicators in blue
-    if (morningId) { document.getElementById(morningId).style.backgroundColor = BLUE_color; }
-    if (eveningId) { document.getElementById(eveningId).style.backgroundColor = BLUE_color; }
+    if (morningId !== null) { document.getElementById(morningId).style.backgroundColor = BLUE_color; }
+    if (eveningId !== null) { document.getElementById(eveningId).style.backgroundColor = BLUE_color; }
 }
 
 function GetCurrentTimeYYYYMMDDHH(today) {
