@@ -166,8 +166,10 @@ const GetData = (fromTime, toTime) => {
 GetData(toDay_YYYYMMDD, Tomorrow_YYYYMMDD);
 
 function paintRedWithAni(id) {
-    document.getElementById(id).style.transition = "all 0.5s";
-    document.getElementById(id).style.backgroundColor = RED_color;
+    if (id) {
+        document.getElementById(id).style.transition = "all 0.5s";
+        document.getElementById(id).style.backgroundColor = RED_color;
+    }
 }
 
 function paintBlue(morningId, eveningId) {
@@ -175,8 +177,8 @@ function paintBlue(morningId, eveningId) {
     var morningDiv = document.getElementById(morningId);
     var eveningDiv = document.getElementById(eveningId);
     //check if not null (could be filterd) paint indicators in blue
-    if (morningDiv) { morningDiv.style.backgroundColor = BLUE_color};
-    if (eveningDiv) { eveningDiv.style.backgroundColor = BLUE_color};
+    if (morningDiv) { morningDiv.style.backgroundColor = BLUE_color; }
+    if (eveningDiv) { eveningDiv.style.backgroundColor = BLUE_color; }
 }
 
 function GetCurrentTimeYYYYMMDDHH(today) {
