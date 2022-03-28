@@ -166,7 +166,7 @@ const GetData = (fromTime, toTime) => {
 GetData(toDay_YYYYMMDD, Tomorrow_YYYYMMDD);
 
 function paintRedWithAni(id) {
-    if (id) {
+    if (document.getElementById(id)) {
         document.getElementById(id).style.transition = "all 0.5s";
         document.getElementById(id).style.backgroundColor = RED_color;
     }
