@@ -172,9 +172,11 @@ function paintRedWithAni(id) {
 
 function paintBlue(morningId, eveningId) {
 
+    var morningDiv = document.getElementById(morningId);
+    var eveningDiv = document.getElementById(eveningId);
     //check if not null (could be filterd) paint indicators in blue
-    if (morningId !== null) { document.getElementById(morningId).style.backgroundColor = BLUE_color; }
-    if (eveningId !== null) { document.getElementById(eveningId).style.backgroundColor = BLUE_color; }
+    if (morningDiv) { morningDiv.style.backgroundColor = BLUE_color};
+    if (eveningDiv) { eveningDiv.style.backgroundColor = BLUE_color};
 }
 
 function GetCurrentTimeYYYYMMDDHH(today) {
