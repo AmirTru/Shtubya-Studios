@@ -1,3 +1,4 @@
+//hi
 const KEY_theDiamond = "72230";
 const KEY_flyingSquares = "76774";
 const KEY_phaseZero = "79999";
