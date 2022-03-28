@@ -63,25 +63,15 @@ const GetData = (fromTime, toTime) => {
                 const eveningShift = fromTime + "1700" //stends for 17:00
 
                 //paint indicators in blue
-                document.getElementById("m-valhalla-lounge").style.backgroundColor = BLUE_color;
-                document.getElementById("e-valhalla-lounge").style.backgroundColor = BLUE_color;
-                document.getElementById("m-zebra").style.backgroundColor = BLUE_color;
-                document.getElementById("e-zebra").style.backgroundColor = BLUE_color;
-                document.getElementById("m-dark-mode").style.backgroundColor = BLUE_color;
-                document.getElementById("e-dark-mode").style.backgroundColor = BLUE_color;
-                document.getElementById("m-purple-haze").style.backgroundColor = BLUE_color;
-                document.getElementById("e-purple-haze").style.backgroundColor = BLUE_color;
-                document.getElementById("m-the-diamond").style.backgroundColor = BLUE_color;
-                document.getElementById("e-the-diamond").style.backgroundColor = BLUE_color;
-                document.getElementById("m-molecule").style.backgroundColor = BLUE_color;
-                document.getElementById("e-molecule").style.backgroundColor = BLUE_color;
-                document.getElementById("m-flying-squares").style.backgroundColor = BLUE_color;
-                document.getElementById("e-flying-squares").style.backgroundColor = BLUE_color;
-                document.getElementById("m-golden-ratio").style.backgroundColor = BLUE_color;
-                document.getElementById("e-golden-ratio").style.backgroundColor = BLUE_color;
-                document.getElementById("m-phase-zero").style.backgroundColor = BLUE_color;
-                document.getElementById("e-phase-zero").style.backgroundColor = BLUE_color;
-
+                paintBlue("m-valhalla-lounge", "e-valhalla-lounge");
+                paintBlue("m-zebra", "e-zebra");
+                paintBlue("m-dark-mode", "e-dark-mode");
+                paintBlue("m-purple-haze", "e-purple-haze");
+                paintBlue("m-the-diamond", "e-the-diamond");
+                paintBlue("m-molecule", "e-molecule");
+                paintBlue("m-flying-squares", "e-flying-squares");
+                paintBlue("m-golden-ratio", "e-golden-ratio");
+                paintBlue("m-phase-zero", "e-phase-zero");
 
                 //iterate 
                 data.appts.forEach(function (index) {
@@ -180,86 +170,93 @@ function paintRedWithAni(id) {
     document.getElementById(id).style.backgroundColor = RED_color;
 }
 
-function GetCurrentTimeYYYYMMDDHH(today){
+function paintBlue(morningId, eveningId) {
+
+    //check if not null (could be filterd) paint indicators in blue
+    if (morningId) { document.getElementById(morningId).style.backgroundColor = BLUE_color; }
+    if (eveningId) { document.getElementById(eveningId).style.backgroundColor = BLUE_color; }
+}
+
+function GetCurrentTimeYYYYMMDDHH(today) {
 
     var year = today.getFullYear();
-    var month = today.getMonth()+1;
+    var month = today.getMonth() + 1;
 
-        if (month < 10) {
-                month = "0" + month;
-        }
-    
+    if (month < 10) {
+        month = "0" + month;
+    }
+
     var day = today.getDate();
 
-          if (day < 10) {
-                day = "0" + day;
-        }
+    if (day < 10) {
+        day = "0" + day;
+    }
 
     var hour = today.getHours();
 
-            if (hour < 10) {
-                hour = "0" + hour;
-        }
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
 
-    var minute = today.getMinutes(); 
+    var minute = today.getMinutes();
 
-            if (minute < 10) {
-                minute = "0" + minute;
-        }       
+    if (minute < 10) {
+        minute = "0" + minute;
+    }
 
-            
+
     var currentTime = year + "" + month + "" + day + "" + hour + "" + minute;
 
     return currentTime;
 }
 
-function GetCurrentTimeYYYYMMDD(today){
+function GetCurrentTimeYYYYMMDD(today) {
 
     var year = today.getFullYear();
-    var month = today.getMonth()+1;
+    var month = today.getMonth() + 1;
 
-        if (month < 10) {
-                month = "0" + month;
-        }
-    
+    if (month < 10) {
+        month = "0" + month;
+    }
+
     var day = today.getDate();
 
-          if (day < 10) {
-                day = "0" + day;
-        }
+    if (day < 10) {
+        day = "0" + day;
+    }
 
     var hour = today.getHours();
 
-            if (hour < 10) {
-                hour = "0" + hour;
-        }
-            
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
+
     var currentTime = year + "" + month + "" + day;
 
     return currentTime;
 }
 
-function GetTomorrowTimeYYYYMMDD(today){
+function GetTomorrowTimeYYYYMMDD(today) {
 
     var year = today.getFullYear();
-    var month = today.getMonth()+1;
+    var month = today.getMonth() + 1;
 
-        if (month < 10) {
-                month = "0" + month;
-        }
-    
+    if (month < 10) {
+        month = "0" + month;
+    }
+
     var day = today.getDate() + 1;
 
-          if (day < 10) {
-                day = "0" + day;
-        }
+    if (day < 10) {
+        day = "0" + day;
+    }
 
     var hour = today.getHours();
 
-            if (hour < 10) {
-                hour = "0" + hour;
-        }
-            
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
+
     var currentTime = year + "" + month + "" + day;
 
     return currentTime;
