@@ -245,6 +245,10 @@ function GetCurrentTimeYYYYMMDD(today) {
 
 function GetTomorrowTimeYYYYMMDD(today) {
 
+    //check if last day of the month
+    var d = new Date(today);
+    console.log(d.toString());
+    
     var year = today.getFullYear();
     var month = today.getMonth() + 1;
 
