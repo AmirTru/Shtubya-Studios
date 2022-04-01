@@ -45,21 +45,22 @@ function GetTomorrowFromCalendar(date) {
 
         } else {
 
-        month = date.getMonth() + 1;
+            month = date.getMonth() + 1;
 
-        if (month < 10) {
-            month = "0" + month;
+            if (month < 10) {
+                month = "0" + month;
+            }
+
+            day = date.getDate() + 1;
+            if (day < 10) {
+                day = "0" + day;
+            }
         }
 
-        day = date.getDate() + 1;
-        if (day < 10) {
-            day = "0" + day;
-        }
+        //console.log(year.toString() + month.toString() + day.toString());
+        return year.toString() + month.toString() + day.toString()
+
     }
-
-    //console.log(year.toString() + month.toString() + day.toString());
-    return year.toString() + month.toString() + day.toString()
-
 }
 
 function GetCurrentTimeFromCalendar(date) {
@@ -120,5 +121,4 @@ function isLastDayOfTheMonth(date) {
     if (d == lastDayOfTheMonth) {
         return true
     }
-    return false
 }
