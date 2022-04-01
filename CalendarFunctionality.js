@@ -40,7 +40,8 @@ function GetTomorrowFromCalendar(date) {
         if (month < 10) {
             month = "0" + month;
 
-            day = 01;
+            day = date.getDate()
+            day = "01";
 
         } else {
 
