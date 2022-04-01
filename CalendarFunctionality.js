@@ -43,6 +43,7 @@ function GetTomorrowFromCalendar(date) {
             day = date.getDate()
             day = "01";
 
+            return year.toString() + month.toString() + day.toString()
         } else {
 
             month = date.getMonth() + 1;
@@ -55,10 +56,11 @@ function GetTomorrowFromCalendar(date) {
             if (day < 10) {
                 day = "0" + day;
             }
+            return year.toString() + month.toString() + day.toString()
         }
 
         //console.log(year.toString() + month.toString() + day.toString());
-        return year.toString() + month.toString() + day.toString()
+
 
     }
 }
