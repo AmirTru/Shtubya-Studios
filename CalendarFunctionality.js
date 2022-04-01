@@ -121,4 +121,5 @@ function isLastDayOfTheMonth(date) {
     if (d == lastDayOfTheMonth) {
         return true
     }
+    return false
 }
