@@ -28,7 +28,7 @@ const GetData = (fromTime, toTime) => {
     var toDay = new Date();
 
     var dt = GetCurrentTimeYYYYMMDDHH(toDay);
-    console.log("date is " + dt)
+    console.log("date selected is " + fromTime)
 
     var keyForSh = siteid + key + dt + "apptlist" + apiSecret;
 
