@@ -26,9 +26,11 @@ function SetGetCurrentTimeFromCalendar(date) {
 
 function GetTomorrowFromCalendar(date) {
 
-    var d = date.GetData();
+
+    
+    var d = date.getDate();
     console.log(d);
-    if (d.getDate() == 0) { console.log("last day of the month") }
+    if (d == 0) { console.log("last day of the month") }
 
     var year;
     var month;
