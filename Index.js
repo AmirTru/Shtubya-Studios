@@ -154,6 +154,7 @@ const GetData = (fromTime, toTime) => {
                 });
             } else {
                 console.log(data.message + " " + dt);
+                console.log("date is " + dt)
             }
         } else {
             console.log("Api error (not in tor4you)");
