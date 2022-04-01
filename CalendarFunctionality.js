@@ -26,11 +26,13 @@ function SetGetCurrentTimeFromCalendar(date) {
 
 function GetTomorrowFromCalendar(date) {
 
+    var lastDayOfTheMonth = new Date(date.getFullYear, date.getMonth + 1, 0);
+    lastDayOfTheMonth = lastDayOfTheMonth.getDate();
 
     
     var d = date.getDate();
-    console.log(d);
-    if (d == 0) { console.log("last day of the month") }
+    console.log(lastDayOfTheMonth);
+    if (d == lastDayOfTheMonth) { console.log("last day of the month") }
 
     var year;
     var month;
