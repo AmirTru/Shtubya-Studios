@@ -39,30 +39,30 @@ function GetTomorrowFromCalendar(date) {
 
         if (month < 10) {
             month = "0" + month;
+        }
+        day = date.getDate()
+        day = "01";
 
-            day = date.getDate()
-            day = "01";
+        return year.toString() + month.toString() + day.toString()
+    } else {
 
-            return year.toString() + month.toString() + day.toString()
-        } else {
+        month = date.getMonth() + 1;
 
-            month = date.getMonth() + 1;
-
-            if (month < 10) {
-                month = "0" + month;
-            }
-
-            day = date.getDate() + 1;
-            if (day < 10) {
-                day = "0" + day;
-            }
-            return year.toString() + month.toString() + day.toString()
+        if (month < 10) {
+            month = "0" + month;
         }
 
-        //console.log(year.toString() + month.toString() + day.toString());
-
-
+        day = date.getDate() + 1;
+        if (day < 10) {
+            day = "0" + day;
+        }
+        return year.toString() + month.toString() + day.toString()
     }
+
+    //console.log(year.toString() + month.toString() + day.toString());
+
+
+}
 }
 
 function GetCurrentTimeFromCalendar(date) {
