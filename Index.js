@@ -32,6 +32,7 @@ const GetData = (fromTime, toTime) => {
     console.log("date selected from time is: " + fromTime + " to time is: " + toTime)
 
     var d = new Date(toDay);
+    console.log(d);
     if (d == 0) { console.log("last day of the month") }
     
 
