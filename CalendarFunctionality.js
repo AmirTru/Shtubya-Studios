@@ -33,7 +33,7 @@ function GetTomorrowFromCalendar(date) {
     //YYYYMMDD
     year = date.getFullYear();
 
-    if (isLastDayOfTheMonth(date)) {
+    if (isLastDayOfTheMonth(date) = true) {
 
         month = date.getMonth() + 2;
 
