@@ -28,7 +28,8 @@ const GetData = (fromTime, toTime) => {
     var toDay = new Date();
 
     var dt = GetCurrentTimeYYYYMMDDHH(toDay);
-    console.log("date selected from time is: " + fromTime+ " to time is: " + toTime)
+    console.log("date selected from time is: " + fromTime + " to time is: " + toTime)
+    var d = GetTomorrowTimeYYYYMMDD();
 
     var keyForSh = siteid + key + dt + "apptlist" + apiSecret;
 
@@ -155,7 +156,7 @@ const GetData = (fromTime, toTime) => {
                 });
             } else {
                 console.log(data.message);
-                
+
             }
         } else {
             console.log("Api error (not in tor4you)");
@@ -178,7 +179,7 @@ function paintBlue(morningId, eveningId) {
 
     var morningDiv = document.getElementById(morningId);
     var eveningDiv = document.getElementById(eveningId);
-    
+
     //check if not null (could be filterd) paint indicators in blue
     if (morningDiv) { morningDiv.style.backgroundColor = BLUE_color; }
     if (eveningDiv) { eveningDiv.style.backgroundColor = BLUE_color; }
@@ -247,8 +248,8 @@ function GetTomorrowTimeYYYYMMDD(today) {
 
     //check if last day of the month
     var d = new Date(today);
-    console.log(d.toString());
-    
+    if (d == 0) { console.log("last day of the month") }
+
     var year = today.getFullYear();
     var month = today.getMonth() + 1;
 
