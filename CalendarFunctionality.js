@@ -45,7 +45,6 @@ function GetTomorrowFromCalendar(date) {
 
         } else {
 
-        }
         month = date.getMonth() + 1;
 
         if (month < 10) {
