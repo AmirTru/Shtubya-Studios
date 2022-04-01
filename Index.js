@@ -28,7 +28,7 @@ const GetData = (fromTime, toTime) => {
     var toDay = new Date();
 
     var dt = GetCurrentTimeYYYYMMDDHH(toDay);
-    console.log("date selected is " + fromTime)
+    console.log("date selected from time is: " + fromTime+ " to time is: " + toTime)
 
     var keyForSh = siteid + key + dt + "apptlist" + apiSecret;
 
@@ -154,7 +154,7 @@ const GetData = (fromTime, toTime) => {
                     }
                 });
             } else {
-                console.log(data.message + " " + dt);
+                console.log(data.message);
                 
             }
         } else {
