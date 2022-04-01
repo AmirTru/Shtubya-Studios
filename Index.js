@@ -55,7 +55,7 @@ const GetData = (fromTime, toTime) => {
         // Status 200 = Success. Status 400 = Problem.  This says if it's successful and no problems, then execute 
         if (request.status >= 200 && request.status < 400) {
 
-            // check with tor4you Status 1 = Success. Status 2 = Problem 
+            // check with tor4you Status 1 = Success. Status 0 = Problem 
             if (data.status == 1) {
 
                 //get shifts time according to tor4you
@@ -153,7 +153,7 @@ const GetData = (fromTime, toTime) => {
                     }
                 });
             } else {
-                console.log(data.message);
+                console.log(data.message + " " + dt);
             }
         } else {
             console.log("Api error (not in tor4you)");
@@ -176,6 +176,7 @@ function paintBlue(morningId, eveningId) {
 
     var morningDiv = document.getElementById(morningId);
     var eveningDiv = document.getElementById(eveningId);
+    
     //check if not null (could be filterd) paint indicators in blue
     if (morningDiv) { morningDiv.style.backgroundColor = BLUE_color; }
     if (eveningDiv) { eveningDiv.style.backgroundColor = BLUE_color; }
