@@ -28,6 +28,7 @@ const GetData = (fromTime, toTime) => {
     var toDay = new Date();
 
     var dt = GetCurrentTimeYYYYMMDDHH(toDay);
+    console.log("date is " + dt)
 
     var keyForSh = siteid + key + dt + "apptlist" + apiSecret;
 
@@ -154,7 +155,7 @@ const GetData = (fromTime, toTime) => {
                 });
             } else {
                 console.log(data.message + " " + dt);
-                console.log("date is " + dt)
+                
             }
         } else {
             console.log("Api error (not in tor4you)");
