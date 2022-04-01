@@ -28,13 +28,6 @@ const GetData = (fromTime, toTime) => {
     var toDay = new Date();
 
     var dt = GetCurrentTimeYYYYMMDDHH(toDay);
-    //////////
-    console.log("date selected from time is: " + fromTime + " to time is: " + toTime)
-
-    var d = new Date(toDay);
-    console.log(d);
-    if (d == 0) { console.log("last day of the month") }
-    
 
     var keyForSh = siteid + key + dt + "apptlist" + apiSecret;
 

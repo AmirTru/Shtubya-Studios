@@ -32,7 +32,6 @@ function GetTomorrowFromCalendar(date) {
     console.log(lastDayOfTheMonth)
     
     var d = date.getDate();
-    ;
     if (d == lastDayOfTheMonth) { console.log("last day of the month") }
 
     var year;
