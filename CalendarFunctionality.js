@@ -63,7 +63,7 @@ function GetTomorrowFromCalendar(date) {
 
 
 }
-}
+
 
 function GetCurrentTimeFromCalendar(date) {
 
