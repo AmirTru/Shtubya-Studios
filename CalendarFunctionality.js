@@ -97,32 +97,16 @@ function getTodayDate(date) {
     //YYYYMMDD
     year = date.getFullYear();
     
-    if (isLastDayOfTheMonth(date)) {
-
-        month = date.getMonth() + 2;
-
-        if (month < 10) {
-            month = "0" + month;
-        }
-        day = date.getDate()
-        day = "01";
-
-        return year.toString() + month.toString() + day.toString()
-    } else {
-
-        month = date.getMonth() + 1;
-
-        if (month < 10) {
-            month = "0" + month;
-        }
-
-        day = date.getDate();
-        if (day < 10) {
-            day = "0" + day;
-        }
-        return year.toString() + month.toString() + day.toString()
+    month = date.getMonth() + 1;
+    if (month < 10) {
+        month = "0" + month;
     }
-    
+    day = date.getDate();
+    if (day < 10) {
+        day = "0" + day;
+    }
+    //set current date to the list text
+    return day.toString() + "/" + month.toString() + "/" + year.toString()
 }
 
 function setTodayDate() {
