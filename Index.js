@@ -248,30 +248,26 @@ function GetTomorrowTimeYYYYMMDD(today) {
     if (d == 0) { console.log("last day of the month") }
 
     var year = today.getFullYear();
-    if (isLastDayOfTheMonth(date)) {
+    var month = today.getMonth() + 1;
 
-        month = date.getMonth() + 2;
-
-        if (month < 10) {
-            month = "0" + month;
-        }
-        day = date.getDate()
-        day = "01";
-
-        return year.toString() + month.toString() + day.toString()
-    } else {
-
-        month = date.getMonth() + 1;
-
-        if (month < 10) {
-            month = "0" + month;
-        }
-
-        day = date.getDate() + 1;
-        if (day < 10) {
-            day = "0" + day;
-        }
-        return year.toString() + month.toString() + day.toString()
+    if (month < 10) {
+        month = "0" + month;
     }
+
+    var day = today.getDate() + 1;
+
+    if (day < 10) {
+        day = "0" + day;
+    }
+
+    var hour = today.getHours();
+
+    if (hour < 10) {
+        hour = "0" + hour;
+    }
+
+    var currentTime = year + "" + month + "" + day;
+
+    return currentTime;
 }
 
