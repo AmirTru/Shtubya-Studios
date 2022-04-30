@@ -73,6 +73,30 @@ function GetCurrentTimeFromCalendar(date) {
 
     //YYYYMMDD
     year = date.getFullYear();
+    month = date.getMonth() + 1;
+    if (month < 10) {
+        month = "0" + month;
+    }
+    day = date.getDate();
+    if (day < 10) {
+        day = "0" + day;
+    }
+
+    //console.log(year.toString() + month.toString() + day.toString());
+    return year.toString() + month.toString() + day.toString()
+
+}
+
+//het and set date to Search engine
+function getTodayDate(date) {
+
+    var year;
+    var month;
+    var day;
+
+    //YYYYMMDD
+    year = date.getFullYear();
+    
     if (isLastDayOfTheMonth(date)) {
 
         month = date.getMonth() + 2;
@@ -98,30 +122,7 @@ function GetCurrentTimeFromCalendar(date) {
         }
         return year.toString() + month.toString() + day.toString()
     }
-
-    //console.log(year.toString() + month.toString() + day.toString());
-
-}
-
-//het and set date to Search engine
-function getTodayDate(date) {
-
-    var year;
-    var month;
-    var day;
-
-    //YYYYMMDD
-    year = date.getFullYear();
-    month = date.getMonth() + 1;
-    if (month < 10) {
-        month = "0" + month;
-    }
-    day = date.getDate();
-    if (day < 10) {
-        day = "0" + day;
-    }
-    //set current date to the list text
-    return day.toString() + "/" + month.toString() + "/" + year.toString()
+    
 }
 
 function setTodayDate() {
