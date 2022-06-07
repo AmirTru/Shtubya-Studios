@@ -170,7 +170,7 @@ function paintShiftBusy(id, morningOrEvening) {
     if (document.getElementById(id)) {
         document.getElementById(id).style.transition = "all 0.5s";
         $(id).addClass(morningOrEvening + 'busy');
-        console.log(id + " is busy")
+        console.log(morningOrEvening + 'busy')
     }
 }
 
