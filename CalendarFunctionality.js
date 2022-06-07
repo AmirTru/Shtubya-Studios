@@ -113,7 +113,7 @@ function getTodayDate(date) {
 function setTodayDate() {
 
     var dt = new Date();
-    //$('.shift-date').text(getTodayDate(dt));
+    getTodayDate(dt);
 
 }
 
