@@ -179,8 +179,8 @@ function paintShiftFree(morningId, eveningId) {
     var eveningDiv = document.getElementById(eveningId);
 
     //check if not null (could be filterd) paint indicators in blue
-    if (morningDiv) { $(id).removeClass('m-busy'); }
-    if (eveningDiv) { $(id).removeClass('e-busy'); }
+    if (morningDiv) { $(morningDiv).removeClass('m-busy'); }
+    if (eveningDiv) { $(eveningDiv).removeClass('e-busy'); }
 }
 
 function GetCurrentTimeYYYYMMDDHH(today) {
