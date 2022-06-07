@@ -144,7 +144,7 @@ const GetData = (fromTime, toTime) => {
                             break;
                         case KEY_zebra:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-zebra".morning);
+                                paintShiftBusy("m-zebra",morning);
                             }
                             if (index.from == eveningShift) {
                                 paintShiftBusy("e-zebra",evening);
