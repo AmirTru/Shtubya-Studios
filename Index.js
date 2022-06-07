@@ -62,91 +62,92 @@ const GetData = (fromTime, toTime) => {
                 const eveningShift = fromTime + "1700" //stends for 17:00
 
                 //paint indicators in blue
-                paintBlue("m-valhalla-lounge", "e-valhalla-lounge");
-                paintBlue("m-zebra", "e-zebra");
-                paintBlue("m-dark-mode", "e-dark-mode");
-                paintBlue("m-purple-haze", "e-purple-haze");
-                paintBlue("m-the-diamond", "e-the-diamond");
-                paintBlue("m-molecule", "e-molecule");
-                paintBlue("m-flying-squares", "e-flying-squares");
-                paintBlue("m-golden-ratio", "e-golden-ratio");
-                paintBlue("m-phase-zero", "e-phase-zero");
+                paintShiftFree("m-valhalla-lounge", "e-valhalla-lounge");
+                paintShiftFree("m-zebra", "e-zebra");
+                paintShiftFree("m-dark-mode", "e-dark-mode");
+                paintShiftFree("m-purple-haze", "e-purple-haze");
+                paintShiftFree("m-the-diamond", "e-the-diamond");
+                paintShiftFree("m-molecule", "e-molecule");
+                paintShiftFree("m-flying-squares", "e-flying-squares");
+                paintShiftFree("m-golden-ratio", "e-golden-ratio");
+                paintShiftFree("m-phase-zero", "e-phase-zero");
 
                 //iterate 
                 data.appts.forEach(function (index) {
-
+                    const morning = "m-";
+                    const evening = "e-";
                     //chcking in which studio we are (studios are stuff in tor4you)
                     switch (index.staff) {
                         case KEY_theDiamond:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-the-diamond");
+                                paintShiftBusy("m-the-diamond",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-the-diamond");
+                                paintShiftBusy("e-the-diamond",evening);
                             }
                             break;
                         case KEY_flyingSquares:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-flying-squares");
+                                paintShiftBusy("m-flying-squares",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-flying-squares");
+                                paintShiftBusy("e-flying-squares",evening);
                             }
                             break;
                         case KEY_phaseZero:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-phase-zero");
+                                paintShiftBusy("m-phase-zero",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-phase-zero");
+                                paintShiftBusy("e-phase-zero",evening);
                             }
                             break;
                         case KEY_molecule:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-molecule");
+                                paintShiftBusy("m-molecule",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-molecule");
+                                paintShiftBusy("e-molecule",evening);
                             }
                             break;
                         case KEY_darkMode:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-dark-mode");
+                                paintShiftBusy("m-dark-mode",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-dark-mode");
+                                paintShiftBusy("e-dark-mode",evening);
                             }
                             break;
                         case KEY_goldenRatio:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-golden-ratio");
+                                paintShiftBusy("m-golden-ratio",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-golden-ratio");
+                                paintShiftBusy("e-golden-ratio",evening);
                             }
                             break;
                         case KEY_purpleHaze:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-purple-haze");
+                                paintShiftBusy("m-purple-haze",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-purple-haze");
+                                paintShiftBusy("e-purple-haze",evening);
                             }
                             break;
                         case KEY_valhallaLounge:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-valhalla-lounge");
+                                paintShiftBusy("m-valhalla-lounge",morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-valhalla-lounge");
+                                paintShiftBusy("e-valhalla-lounge",evening);
                             }
                             break;
                         case KEY_zebra:
                             if (index.from == morningShift) {
-                                paintRedWithAni("m-zebra");
+                                paintShiftBusy("m-zebra".morning);
                             }
                             if (index.from == eveningShift) {
-                                paintRedWithAni("e-zebra");
+                                paintShiftBusy("e-zebra",evening);
                             }
                             break;
                     }
@@ -165,21 +166,21 @@ const GetData = (fromTime, toTime) => {
 
 GetData(toDay_YYYYMMDD, Tomorrow_YYYYMMDD);
 
-function paintRedWithAni(id) {
+function paintShiftBusy(id, morningOrEvening) {
     if (document.getElementById(id)) {
         document.getElementById(id).style.transition = "all 0.5s";
-        document.getElementById(id).style.backgroundColor = RED_color;
+        $(id).addClass(morningOrEvening + 'busy');
     }
 }
 
-function paintBlue(morningId, eveningId) {
+function paintShiftFree(morningId, eveningId) {
 
     var morningDiv = document.getElementById(morningId);
     var eveningDiv = document.getElementById(eveningId);
 
     //check if not null (could be filterd) paint indicators in blue
-    if (morningDiv) { morningDiv.style.backgroundColor = BLUE_color; }
-    if (eveningDiv) { eveningDiv.style.backgroundColor = BLUE_color; }
+    if (morningDiv) { $(id).removeClass('m-busy'); }
+    if (eveningDiv) { $(id).removeClass('e-busy'); }
 }
 
 function GetCurrentTimeYYYYMMDDHH(today) {
