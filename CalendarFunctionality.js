@@ -105,14 +105,15 @@ function getTodayDate(date) {
     if (day < 10) {
         day = "0" + day;
     }
+    $('.shift-date').text(day.toString() + "." + month.toString() + "." + year.toString());
     //set current date to the list text
-    return day.toString() + "." + month.toString() + "." + year.toString()
+    return day.toString() + "/" + month.toString() + "/" + year.toString()
 }
 
 function setTodayDate() {
 
     var dt = new Date();
-    $('.shift-date').text(getTodayDate(dt));
+    //$('.shift-date').text(getTodayDate(dt));
 
 }
 
