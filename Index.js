@@ -171,7 +171,7 @@ function paintShiftBusy(id, morningOrEvening) {
     if (studioId) {
         studioId.style.transition = "all 0.5s";
         studioId.classList.add(morningOrEvening + 'busy');
-        console.log(morningOrEvening + 'busy')
+    
     }
 }
 
