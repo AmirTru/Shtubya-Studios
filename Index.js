@@ -167,9 +167,10 @@ const GetData = (fromTime, toTime) => {
 GetData(toDay_YYYYMMDD, Tomorrow_YYYYMMDD);
 
 function paintShiftBusy(id, morningOrEvening) {
-    if (document.getElementById(id)) {
-        document.getElementById(id).style.transition = "all 0.5s";
-        $(id).addClass(morningOrEvening + 'busy');
+    var studioId = document.getElementById(id);
+    if (studioId) {
+        studioId.style.transition = "all 0.5s";
+        studioId.classList.add(morningOrEvening + 'busy');
         console.log(morningOrEvening + 'busy')
     }
 }
