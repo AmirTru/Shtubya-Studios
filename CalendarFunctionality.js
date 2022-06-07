@@ -106,7 +106,7 @@ function getTodayDate(date) {
         day = "0" + day;
     }
     //set current date to the list text
-    return day.toString() + "/" + month.toString() + "/" + year.toString()
+    return day.toString() + "." + month.toString() + "." + year.toString()
 }
 
 function setTodayDate() {
