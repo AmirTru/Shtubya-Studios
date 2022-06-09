@@ -7,9 +7,11 @@ const KEY_goldenRatio = "68266";
 const KEY_purpleHaze = "71636";
 const KEY_valhallaLounge = "80684";
 const KEY_zebra = "81836";
+const KEY_serenity = "87402";
+const KEY_blackPearl = "87403";
 
-const RED_color = "red";
-const BLUE_color = "blue";
+// const RED_color = "red";
+// const BLUE_color = "blue";
 
 var toDay = new Date();
 
@@ -71,6 +73,9 @@ const GetData = (fromTime, toTime) => {
                 paintShiftFree("m-flying-squares", "e-flying-squares");
                 paintShiftFree("m-golden-ratio", "e-golden-ratio");
                 paintShiftFree("m-phase-zero", "e-phase-zero");
+                paintShiftFree("m-black-pearl", "e-black-pearl");
+                paintShiftFree("m-serenity", "e-serenity");
+
 
                 //iterate 
                 data.appts.forEach(function (index) {
@@ -149,6 +154,21 @@ const GetData = (fromTime, toTime) => {
                             if (index.from == eveningShift) {
                                 paintShiftBusy("e-zebra",evening);
                             }
+                        case KEY_blackPearl:
+                            if (index.from == morningShift) {
+                                paintShiftBusy("m-black-pearl",morning);
+                            }
+                            if (index.from == eveningShift) {
+                                paintShiftBusy("e-black-pearl",evening);
+                            }
+                        case KEY_serenity:
+                            if (index.from == morningShift) {
+                                paintShiftBusy("m-serenity",morning);
+                            }
+                            if (index.from == eveningShift) {
+                                paintShiftBusy("e-serenity",evening);
+                            }    
+                            
                             break;
                     }
                 });
