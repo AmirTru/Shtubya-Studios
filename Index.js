@@ -79,8 +79,8 @@ const GetData = (fromTime, toTime) => {
 
                 //iterate 
                 data.appts.forEach(function (index) {
-                    const morning = "e-";
-                    const evening = "m-";
+                    const morning = "m-";
+                    const evening = "e-";
                     //chcking in which studio we are (studios are stuff in tor4you)
                     switch (index.staff) {
                         case KEY_theDiamond:
