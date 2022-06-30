@@ -173,11 +173,11 @@ const GetData = (fromTime, toTime) => {
                     }
                 });
             } else {
-                console.log(data.message + " - ft " + fromTime + " tt " + toTime);
+                //console.log(data.message + " - ft " + fromTime + " tt " + toTime);
 
             }
         } else {
-            console.log("Api error (not in tor4you)");
+           // console.log("Api error (not in tor4you)");
         }
 
     };
@@ -268,7 +268,7 @@ function GetTomorrowTimeYYYYMMDD(today) {
 
     //check if last day of the month
     var d = new Date(today);
-    if (d == 0) { console.log("last day of the month") }
+    //if (d == 0) { console.log("last day of the month") }
 
     var year = today.getFullYear();
 
