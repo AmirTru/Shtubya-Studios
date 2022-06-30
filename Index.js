@@ -309,3 +309,13 @@ function GetTomorrowTimeYYYYMMDD(today) {
     }
 }
 
+function isLastDayOfTheMonth(date) {
+
+    var dt = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    var lastDayOfTheMonth = dt.getDate();
+    var d = date.getDate();
+    if (d == lastDayOfTheMonth) {
+        return true
+    } return false
+}
+
