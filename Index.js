@@ -85,90 +85,90 @@ const GetData = (fromTime, toTime) => {
                     switch (index.staff) {
                         case KEY_theDiamond:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-the-diamond",morning);
+                                paintShiftBusy("m-the-diamond", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-the-diamond",evening);
+                                paintShiftBusy("e-the-diamond", evening);
                             }
                             break;
                         case KEY_flyingSquares:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-flying-squares",morning);
+                                paintShiftBusy("m-flying-squares", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-flying-squares",evening);
+                                paintShiftBusy("e-flying-squares", evening);
                             }
                             break;
                         case KEY_phaseZero:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-phase-zero",morning);
+                                paintShiftBusy("m-phase-zero", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-phase-zero",evening);
+                                paintShiftBusy("e-phase-zero", evening);
                             }
                             break;
                         case KEY_molecule:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-molecule",morning);
+                                paintShiftBusy("m-molecule", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-molecule",evening);
+                                paintShiftBusy("e-molecule", evening);
                             }
                             break;
                         case KEY_darkMode:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-dark-mode",morning);
+                                paintShiftBusy("m-dark-mode", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-dark-mode",evening);
+                                paintShiftBusy("e-dark-mode", evening);
                             }
                             break;
                         case KEY_goldenRatio:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-golden-ratio",morning);
+                                paintShiftBusy("m-golden-ratio", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-golden-ratio",evening);
+                                paintShiftBusy("e-golden-ratio", evening);
                             }
                             break;
                         case KEY_purpleHaze:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-purple-haze",morning);
+                                paintShiftBusy("m-purple-haze", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-purple-haze",evening);
+                                paintShiftBusy("e-purple-haze", evening);
                             }
                             break;
                         case KEY_valhallaLounge:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-valhalla-lounge",morning);
+                                paintShiftBusy("m-valhalla-lounge", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-valhalla-lounge",evening);
+                                paintShiftBusy("e-valhalla-lounge", evening);
                             }
                             break;
                         case KEY_zebra:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-zebra",morning);
+                                paintShiftBusy("m-zebra", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-zebra",evening);
+                                paintShiftBusy("e-zebra", evening);
                             }
                         case KEY_blackPearl:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-black-pearl",morning);
+                                paintShiftBusy("m-black-pearl", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-black-pearl",evening);
+                                paintShiftBusy("e-black-pearl", evening);
                             }
                         case KEY_serenity:
                             if (index.from == morningShift) {
-                                paintShiftBusy("m-serenity",morning);
+                                paintShiftBusy("m-serenity", morning);
                             }
                             if (index.from == eveningShift) {
-                                paintShiftBusy("e-serenity",evening);
-                            }    
-                            
+                                paintShiftBusy("e-serenity", evening);
+                            }
+
                             break;
                     }
                 });
@@ -191,7 +191,7 @@ function paintShiftBusy(id, morningOrEvening) {
     if (studioId) {
         studioId.style.transition = "all 0.5s";
         studioId.classList.add(morningOrEvening + 'busy');
-    
+
     }
 }
 
@@ -285,26 +285,27 @@ function GetTomorrowTimeYYYYMMDD(today) {
         return year.toString() + month.toString() + day.toString()
     } else {
 
-    var month = today.getMonth() + 1;
+        var month = today.getMonth() + 1;
 
-    if (month < 10) {
-        month = "0" + month;
+        if (month < 10) {
+            month = "0" + month;
+        }
+
+        var day = today.getDate() + 1;
+
+        if (day < 10) {
+            day = "0" + day;
+        }
+
+        var hour = today.getHours();
+
+        if (hour < 10) {
+            hour = "0" + hour;
+        }
+
+        var currentTime = year + "" + month + "" + day;
+
+        return currentTime;
     }
-
-    var day = today.getDate() + 1;
-
-    if (day < 10) {
-        day = "0" + day;
-    }
-
-    var hour = today.getHours();
-
-    if (hour < 10) {
-        hour = "0" + hour;
-    }
-
-    var currentTime = year + "" + month + "" + day;
-
-    return currentTime;
 }
 
