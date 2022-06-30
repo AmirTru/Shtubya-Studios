@@ -272,14 +272,14 @@ function GetTomorrowTimeYYYYMMDD(today) {
 
     var year = today.getFullYear();
 
-    if (isLastDayOfTheMonth(date)) {
+    if (isLastDayOfTheMonth(today)) {
 
-        month = date.getMonth() + 2;
+        month = today.getMonth() + 2;
 
         if (month < 10) {
             month = "0" + month;
         }
-        day = date.getDate()
+        day = today.getDate()
         day = "01";
 
         return year.toString() + month.toString() + day.toString()
@@ -309,13 +309,4 @@ function GetTomorrowTimeYYYYMMDD(today) {
     }
 }
 
-function isLastDayOfTheMonth(date) {
-
-    var dt = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-    var lastDayOfTheMonth = dt.getDate();
-    var d = date.getDate();
-    if (d == lastDayOfTheMonth) {
-        return true
-    } return false
-}
 
