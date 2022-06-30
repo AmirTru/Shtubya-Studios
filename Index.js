@@ -173,7 +173,7 @@ const GetData = (fromTime, toTime) => {
                     }
                 });
             } else {
-                console.log(data.message + " - " + dt);
+                console.log(data.message + " - ft " + fromTime + " tt " + toTime);
 
             }
         } else {
