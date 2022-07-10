@@ -20,6 +20,7 @@ function SetGetCurrentTimeFromCalendar(date) {
     }
     //set current date to the list text
     $('.shift-date').text(day.toString() + "." + month.toString() + "." + year.toString());
+    $('.dd-date-text').text(day.toString() + "." + month.toString() + "." + year.toString());
     return day.toString() + "/" + month.toString() + "/" + year.toString()
 
 }
