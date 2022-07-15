@@ -154,6 +154,7 @@ const GetData = (fromTime, toTime) => {
                             if (index.from == eveningShift) {
                                 paintShiftBusy("e-zebra", evening);
                             }
+                            break;
                         case KEY_blackPearl:
                             if (index.from == morningShift) {
                                 paintShiftBusy("m-black-pearl", morning);
@@ -161,6 +162,7 @@ const GetData = (fromTime, toTime) => {
                             if (index.from == eveningShift) {
                                 paintShiftBusy("e-black-pearl", evening);
                             }
+                            break;
                         case KEY_serenity:
                             if (index.from == morningShift) {
                                 paintShiftBusy("m-serenity", morning);
@@ -168,7 +170,6 @@ const GetData = (fromTime, toTime) => {
                             if (index.from == eveningShift) {
                                 paintShiftBusy("e-serenity", evening);
                             }
-
                             break;
                     }
                 });
